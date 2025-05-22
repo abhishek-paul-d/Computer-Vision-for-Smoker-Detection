@@ -21,15 +21,15 @@ The VGG16 model is a convolutional neural network architecture that was introduc
 ### Results
 The VGG16 model achieved an accuracy of 96.43% on the test set. The precision, recall, and F1-score were 0.96, 0.97, and 0.96 respectively. The confusion matrix and classification report are as follows:
  
-![alt text](image-1.png)
+![alt text](<Screenshot 2025-05-22 093347.png>)
 
 
 Classification Report:
-              precision    recall  f1-score   support
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.95      | 0.92   | 0.93     | 60      |
+| 1     | 0.92      | 0.95   | 0.93     | 60      |
 
-           0       0.95      0.92      0.93        60
-           1       0.92      0.95      0.93        60
-
-    accuracy                           0.93       120
-   macro avg       0.93      0.93      0.93       120
-weighted avg       0.93      0.93      0.93       120
+Accuracy: 0.93
+Macro Avg: 0.93
+Weighted Avg: 0.93
