@@ -20,19 +20,19 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/sujaykapadn
 The VGG16 model is a convolutional neural network architecture that was introduced by the Visual Geometry Group (VGG) at the University of Oxford. It is known for its simplicity and effectiveness in image classification tasks. The model consists of 16 layers, including 13 convolutional layers and 3 fully connected layers. The VGG16 model has been pre-trained on the ImageNet dataset, which contains over 1 million images across 1000 categories. This pre-training allows the model to learn general features that can be fine-tuned for specific tasks, such as smoker detection.
 
 ### Results
-The VGG16 model achieved an accuracy of 90.0% on the test set. The precision, recall, and F1-score were 0.90, 0.90, and 0.90 respectively. The confusion matrix and classification report are as follows:
+The VGG16 model achieved an accuracy of 78.0% on the test set. The precision, recall, and F1-score were 0.93, 0.61, and 0.74 respectively. The confusion matrix and classification report are as follows:
 
 ![Screenshot 2025-05-22 093347](https://github.com/user-attachments/assets/475b8ea8-11fb-4a94-b317-6bf9b370e303)
 
 Classification Report:
-| Class | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| 0     | 0.95      | 0.92   | 0.93     | 60      |
-| 1     | 0.92      | 0.95   | 0.93     | 60      |
+| Class | Precision | Recall | F1-Score | Support  |
+|-------|-----------|--------|----------|----------|
+| 0     | 0.93      | 0.61   | 0.74     | 112      |
+| 1     | 0.71      | 0.96   | 0.81     | 112      |
 
-Accuracy: 0.93
-Macro Avg: 0.93
-Weighted Avg: 0.93
+Accuracy: 0.78
+Macro Avg: 0.77
+Weighted Avg: 0.77
 
 ## ResNet-50 Model
 The ResNet-50 model is a convolutional neural network architecture that was introduced by Microsoft Research. It is known for its depth and the use of residual connections, which help in training very deep networks. The model consists of 50 layers, including 49 convolutional layers and 1 fully connected layer. The ResNet-50 model has been pre-trained on the ImageNet dataset, which contains over 1 million images across 1000 categories. This pre-training allows the model to learn general features that can be fine-tuned for specific tasks, such as smoker detection.
@@ -46,26 +46,54 @@ The ResNet-50 model achieved an accuracy of 92.5% on the test set. The precision
 Classification Report:
 | Class | Precision | Recall | F1-Score | Support |
 |-------|-----------|--------|----------|---------|
-| 0     | 0.93      | 0.92   | 0.92     | 60      |
-| 1     | 0.92      | 0.93   | 0.92     | 60      |
+| 0     | 0.92      | 0.87   | 0.89     | 112      |
+| 1     | 0.87      | 0.93   | 0.90     | 112      |
 
-Accuracy: 0.925
-Macro Avg: 0.925
-Weighted Avg: 0.925
+Accuracy: 0.90
+Macro Avg: 0.90
+Weighted Avg: 0.90
 
 ## Comparison of Models
 Comparing the two models:
 - **ResNet-50**:
-  - Accuracy: 92.5%
-  - Precision: 0.93
-  - Recall: 0.92
-  - F1-score: 0.92
-  - AUC: 92.5%
+  - Accuracy Score : 89.73%
+  - Precision Score: 87.39%
+  - Recall Score: 92.86%
+  - F1-score: 90.04%
+  - AUC Score: 89.73%
 - **VGG16**:
-  - Accuracy: 90.0%
-  - Precision: 0.90
-  - Recall: 0.90
-  - F1-score: 0.90
-  - AUC: 90.0%
+  - Accuracy Score: 78.12%
+  - Precision Score: 70.86%
+  - Recall Score: 95.54%
+  - F1-score: 81.37%
+  - AUC Score: 78.13%
+## Conclusion 
+| Metric                 | ResNet   | VGG16            |
+| ---------------------- | -------- | ---------------- |
+| **Accuracy**           | **0.90** | 0.78             |
+| **F1-Score (Class 0)** | 0.89     | 0.74             |
+| **F1-Score (Class 1)** | 0.90     | 0.81             |
+| **Macro Avg F1**       | **0.90** | 0.77             |
+| **Recall (Class 0)**   | 0.87     | **0.61** (low)   |
+| **Recall (Class 1)**   | **0.93** | 0.96 (very high) | 
+ResNet outperforms VGG16 across all major metrics, especially in:
 
-**Conclusion**: The ResNet-50 model outperforms the VGG16 model in all metrics, making it the better choice for this task.
+-Overall accuracy
+
+-F1-score for both classes
+
+-Better balance between precision and recall
+
+-VGG16 struggles with class 0, achieving only 0.61 recall, which means it 
+ misses many class 0 predictions.
+
+-VGG16 is more biased toward class 1, with high recall but lower 
+ precision,indicating it over-predicts class 1. 
+## Final Verdict
+-ResNet is the better model for this classification task — it's more 
+ accurate, balanced, and reliable.
+
+-VGG16 is less stable, especially for detecting class 0, which could be 
+ risky in real-world deployment.
+
+
