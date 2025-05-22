@@ -40,7 +40,8 @@ The ResNet-50 model is a convolutional neural network architecture that was intr
 ### Results
 The ResNet-50 model achieved an accuracy of 92.5% on the test set. The precision, recall, and F1-score were 0.93, 0.92, and 0.92 respectively. The confusion matrix and classification report are as follows:
 
-![Confusion Matrix for ResNet-50](path/to/resnet50_confusion_matrix.png)
+![Screenshot 2025-05-22 184822](https://github.com/user-attachments/assets/c2c45736-c182-4d07-9277-4d6a1bae167e)
+
 
 Classification Report:
 | Class | Precision | Recall | F1-Score | Support |
