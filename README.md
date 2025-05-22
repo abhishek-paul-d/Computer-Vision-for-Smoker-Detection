@@ -75,7 +75,8 @@ Comparing the two models:
 | **F1-Score (Class 1)** | 0.90     | 0.81             |
 | **Macro Avg F1**       | **0.90** | 0.77             |
 | **Recall (Class 0)**   | 0.87     | **0.61** (low)   |
-| **Recall (Class 1)**   | **0.93** | 0.96 (very high) | 
+| **Recall (Class 1)**   | **0.93** | 0.96 (very high) |  
+
 ResNet outperforms VGG16 across all major metrics, especially in:
 
 -Overall accuracy
